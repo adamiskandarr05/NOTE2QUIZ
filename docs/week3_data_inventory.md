@@ -32,4 +32,4 @@ Prepared text retains its source licence. S01 passages remain under [CC BY-NC 3.
 
 ## Execution status
 
-The notebook and exports were checked with local Python 3.12.14 and pypdf 6.21.4. The Google Colab run is pending. The saved notebook outputs and manifests identify the local runtime.
+The notebook passed all 11 code cells in Google Colab using Python 3.13.18 and pypdf 6.21.4. It produced 62 passages and passed the repeatability and failure checks. Its prepared-file checksum matches the earlier local run. The saved notebook contains the Colab outputs; the manifests retain the earlier local Python 3.12.14 run details.

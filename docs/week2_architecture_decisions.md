@@ -71,4 +71,4 @@ AD2 has the main trade-off. Requiring a student to inspect a key before answerin
 
 ## Week 3 data evidence
 
-The data functions are expanded in the [Week 3 pipeline diagram](week3_pipeline_diagram.png). The [notebook](../notebooks/week3_pipeline.ipynb) and [pipeline decisions](week3_pipeline_decisions.md) link FR1, FR3 and RAI1 to 62 prepared passages with source files and PDF pages. These local preparation checks support E2 but do not replace the planned question-quality evaluation. The Colab run is pending.
+The data functions are expanded in the [Week 3 pipeline diagram](week3_pipeline_diagram.png). The [notebook](../notebooks/week3_pipeline.ipynb) and [pipeline decisions](week3_pipeline_decisions.md) link FR1, FR3 and RAI1 to 62 prepared passages with source files and PDF pages. The local and Google Colab preparation checks passed. They support E2 but do not replace the planned question-quality evaluation.

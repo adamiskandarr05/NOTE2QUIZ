@@ -137,7 +137,7 @@
         <mxCell id="text-30" parent="1" vertex="1" value="Repeatability check: two local runs produced matching source hashes, prepared files and mappings." style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=top;spacing=0;fontFamily=Arial;fontSize=22;fontStyle=0;fontColor=#202938;strokeColor=none;fillColor=none;">
           <mxGeometry x="40" y="930" width="1190" height="32.6" as="geometry"/>
         </mxCell>
-        <mxCell id="text-31" parent="1" vertex="1" value="Local Python check: passed. Google Colab run: pending." style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=top;spacing=0;fontFamily=Arial;fontSize=23;fontStyle=1;fontColor=#202938;strokeColor=none;fillColor=none;">
+        <mxCell id="text-31" parent="1" vertex="1" value="Local Python and Google Colab checks: passed." style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=top;spacing=0;fontFamily=Arial;fontSize=23;fontStyle=1;fontColor=#202938;strokeColor=none;fillColor=none;">
           <mxGeometry x="40" y="1015" width="1840" height="33.900000000000006" as="geometry"/>
         </mxCell>
         <mxCell id="text-32" parent="1" vertex="1" value="PDF positions are retained. Source licences still apply. No quiz questions are generated in this lab." style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=top;spacing=0;fontFamily=Arial;fontSize=21;fontStyle=0;fontColor=#546170;strokeColor=none;fillColor=none;">

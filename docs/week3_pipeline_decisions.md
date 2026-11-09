@@ -62,4 +62,4 @@ The local pipeline ran twice. Both runs produced 62 records and a 44,580-byte pr
 
 Two controlled failure checks passed: a missing source was stopped before reading, and empty text was stopped before preparation. The [diagram](week3_pipeline_diagram.png) shows these failures and responses.
 
-The outputs record a local Python check. A Google Colab run is still pending. Same-environment repeatability does not prove that the text is suitable for every future question.
+The saved notebook also passed in Google Colab with Python 3.13.18 and pypdf 6.21.4. Its two runs produced the same prepared-file checksum as the local exports. The published manifests retain the earlier local run details. Matching files do not prove that the text is suitable for every future question.
