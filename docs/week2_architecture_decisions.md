@@ -1,61 +1,70 @@
 # Architecture decisions for note2quiz
 
-Version: 1.0
+Version: 1.1 | Updated: 9 November 2026
 
 ## Starting point
 
-User request -> application -> question writer -> draft questions.
+User request → application → question writer → questions and quiz feedback.
 
-The user chooses notes, a topic and a question count. The question writer produces questions and explanations from selected passages. This simple flow can create text, but it cannot by itself keep source pages, check permission, save review decisions or prevent drafts from entering a quiz.
+The user selects a role, signs in, chooses notes and requests questions. A simple writer can create text, but the app also needs source pages, permission checks, hidden student answers, teacher review, saved marks and optional reading.
 
-The V1 diagram adds only the functions needed for those requirements. The boxes are functions within the planned application, not a requirement to build a separate service for each box.
+The revised V1 diagram shows functions inside one application. A box does not require a separate service or a specific software product.
 
 ## Needs from the requirements
 
 | Requirement | What it needs | Architecture response |
 |---|---|---|
-| FR1, FR3 / O1 | Read supported notes and retain the selected course, file and page. | Read and organise notes; find relevant notes. |
-| FR2, NFR2 | Write questions and explanations from the chosen passages. | Question writer receiving selected passages and the user's topic. |
-| FR3, FR4, RAI1 | Detect missing fields, repeated options and questionable source use. | Question checks with access to the draft and original passages; visible flags for review. |
-| FR4, FR5, RAI2 | Save decisions and use accepted questions only. | Review and quiz interface; saved questions and reviews. |
-| RAI3 | Check permission and sensitive fields before outside processing. | Request checks between finding passages and sending them to the question writer. A failed check returns a message to the interface. |
-| NFR1, NFR3, NFR4 / O3 | Measure time, cost and question quality. | Test records containing public test outputs, flags, review labels, timings and usage. |
+| FR1, FR3 / O1 | Read supported notes and retain course, file and page. | Read and organise notes; find source passages. |
+| FR2 / NFR2 | Write questions, options and explanations using selected passages. | Question writer. |
+| FR3, FR4 / RAI1, RAI2 | Check required fields, different options and source-quote matches. | Question checks; visible evidence for teachers and feedback for students. |
+| FR4, FR5 / RAI2 | Separate student self-tests from teacher preparation. | Student and teacher flow: students answer before seeing keys; teachers review and use accepted questions. |
+| FR6 / RAI4 | Choose a role, sign in and enforce workspace access. | Role and sign-in checks; records separated by account. |
+| FR7 / NFR5 | Save quiz answers and marks without later edits rewriting past results. | Saved question, review and quiz records; saved copies of completed quizzes. |
+| RAI3 | Obtain permission and check selected text before external processing. | Request checks before the question writer. |
+| FR8 / RAI5 | Offer extra reading only when requested. | Optional related-reading function connected to a selected public reading list. |
+| O3 / NFR1 to NFR5 / RAI1 to RAI5 | Collect evidence for correctness, controls, reading, records, time and cost. | Test records and the evaluation plan. |
 
 ## V1 diagram
 
-![note2quiz V1 architecture](week2_architecture_v1.png)
+![note2quiz revised V1 architecture](week2_architecture_v1.png)
 
 [Editable Draw.io diagram](week2_architecture_v1.drawio)
 
-The question writer is labelled by its function. The provider, model version, search method and software tools will be selected or refined in later labs. User permission and sensitive-field checks apply before selected text is sent outside the application. Question and review records stay in the application.
+The diagram uses functional labels. The current local prototype uses PDF text extraction and topic-word matching locally, with Google Gemini for new question generation. These implementation choices can be refined in later labs without changing the role and source requirements. The first reading list contains 18 public resources; it is separate from the PDFs selected for a quiz.
 
 ## Architecture decisions and trade-offs
 
 | Decision | Requirement or constraint | Alternatives considered | Selected option | Trade-off accepted |
 |---|---|---|---|---|
-| AD1 Keep source pages and find passages before writing | O1 / FR1, FR3 / RAI1 | Use general model knowledge; send every page; find passages from the chosen notes. | Read the notes, keep file and page references, and find relevant passages for the selected topic. | Adds reading and search work. Extraction can lose layout, and search can miss a useful passage, so evidence still needs checking. |
-| AD2 Require a saved human review decision | O2 / FR4, FR5 / RAI2 | Use drafts immediately; show warnings only; require explicit acceptance. | Save Draft, Accepted and Rejected states; allow only Accepted questions in quizzes. Editing returns a question to Draft. | Adds review time and storage, but makes the decision visible and keeps unchecked drafts out of quizzes. |
+| AD1 Keep source pages and find passages before writing | O1 / FR1, FR3 / RAI1 | General model knowledge; all pages; selected relevant passages. | Retain course, file and page references and find passages from the selected notes. | Extraction may lose layout and matching may miss useful text. A real quote still needs a correctness check. |
+| AD2 Use different quiz rules for students and teachers | O2 / FR3 to FR5 / RAI1, RAI2 | Require everyone to review the key; hide all keys; separate the two flows. | Students practise questions passing basic checks, with keys hidden until submission. Teachers inspect and accept drafts; teacher practice uses accepted questions. | Students can encounter factual errors in generated drafts. Show that limit, provide evidence after submission and evaluate question quality. Teacher acceptance remains a separate decision. |
+| AD3 Use local accounts and retain quiz records | O2 / FR6, FR7 / NFR5 / RAI4 | One shared workspace; school sign-in; local accounts. | Ask for a role before sign-in, enforce the stored role and keep separate workspaces. Preserve submitted answers and marks. | Accounts are limited to this computer and roles are self-selected. Classroom sharing and school identity checks are outside this version. |
+| AD4 Keep related reading optional and start with a selected list | O2 / FR8 / RAI3, RAI5 | No reading feature; live web search; selected public links. | Show up to three matching links only after the user clicks. Use the set topic or incorrect quiz answers. Offer a clear no-match response. | Coverage is limited. A link may not suit the course, so show its publisher and let the user decide. Reading links do not become quiz sources automatically. |
 
-## Initial requirements traceability matrix
+## Requirements traceability matrix
 
-Later evidence below is planned, not a claim that tests have passed.
+The evidence below is planned unless separately recorded as a completed test. The local software checks do not replace the 30-question quality evaluation.
 
 | Objective | Requirement | Evaluation criterion | Architecture element | Later evidence |
 |---|---|---|---|---|
-| O1 | FR1, FR3 / RAI1 | E2 Source references and support | Read and organise notes; find relevant notes; question checks. | File and page comparisons for 30 draft questions, including checks that only selected files were used. |
-| O2 | FR2 / NFR2 | E1 Correctness | Question writer; question checks; review interface. | Independent ratings and final labels for 30 unedited drafts. |
-| O2 | FR4, FR5 / RAI2 | E4 Review controls and checks | Question checks; review and quiz interface; saved questions and reviews. | Results for 20 state cases and 20 structural-check cases. |
-| O2 | RAI3 | E5 Permission and privacy | Request checks before the question writer. | Outgoing-request inspection for 20 cases using fake personal details. |
-| O3 | NFR3 | E3 Clarity | Review interface; test records. | Clarity ratings, initial reviewer agreement and final scores. |
-| O3 | NFR1, NFR4 | E6 Time and cost | Question writer; question checks; test records. | Six end-to-end times, recorded service usage and calculated cost. |
+| O1 | FR1, FR3 / RAI1 | E2 Source references and support | Read and organise notes; find source passages; question checks. | File, page and passage comparisons for 30 generated drafts. |
+| O2 | FR2 / NFR2 | E1 Correctness | Question writer; teacher review and test records. | Independent correctness ratings and final labels for 30 unedited drafts. |
+| O2 | FR3 to FR5 / RAI2 | E4 Quiz rules and checks | Question checks; student and teacher flow. | Results for 20 workflow cases and 20 structural-check cases, including student server responses. |
+| O2 | RAI3 | E5 Permission and outgoing data | Request checks before the question writer. | Outgoing-request inspection for 20 cases using fake details. |
+| O2 | FR6 / RAI4 | E7 Accounts and roles | Role and sign-in checks; records for each account. | Twelve sign-in, role and other-account access cases. |
+| O2 | FR7 / NFR5 | E8 Saved marks | Saved questions, reviews and quiz records. | Six before-and-after record comparisons. |
+| O2 | FR8 / RAI5 | E9 Optional reading | Related-reading function; public reading list; application interface. | Relevance ratings, opened links, no-match cases and four optional-button flows. |
+| O3 | NFR3 | E3 Clarity | Teacher view and test records. | Independent clarity ratings, agreement and final scores. |
+| O3 | NFR1, NFR4 | E6 Time and cost | Question writer; question checks; test records. | Six end-to-end times, usage records and test-date cost calculations. |
 
 ## Review of V1
 
-- Every function in the diagram has a requirement in the needs table.
-- The diagram includes the course notes, page references, permission check, draft checks and human decision.
-- No database brand, model version or extra platform is required at this stage.
-- Writing, checking, review and quizzes can be parts of one application. A separate service for every box would add unnecessary work.
+- Each function supports a requirement in the needs table.
+- Source references are retained, but student keys and answer-specific evidence appear only after submission.
+- Student eligibility is different from teacher acceptance. Both rules are enforced by the app.
+- Optional reading uses a separate public list and does not silently change the quiz sources.
+- Accounts, source records, teacher decisions and quiz marks can remain parts of one local application.
 
 ## Reflection
 
-AD2 has the most important trade-off. FR4, FR5 and RAI2 require human acceptance before quiz use. This makes question preparation slower, but it avoids treating an unchecked draft as a ready practice question and preserves the reason for a review decision.
+AD2 has the main trade-off. Requiring a student to inspect a key before answering would weaken the self-test, while removing teacher review would make preparation harder. Separate flows support both tasks. This also makes correctness testing more important because a source match alone cannot establish that a generated answer is right.

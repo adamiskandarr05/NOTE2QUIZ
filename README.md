@@ -4,9 +4,13 @@ Turns course notes into practice questions and shows the pages that support the 
 
 ## Problem statement
 
-Students need practice questions to check what they understand. Writing clear questions, correct answers and useful wrong options takes time. note2quiz will use selected course notes to draft questions, show the supporting passages and let a person check each question before it is used in a quiz.
+Students need practice questions to check what they understand. Writing clear questions, correct answers and useful wrong options takes time. note2quiz creates draft questions from selected course notes and keeps the passages that support the answers.
 
-The project covers different subjects. The first version will work with English PDFs that contain selectable text. It is a planned student project; the application and its performance tests will be developed in later labs.
+Users choose Student or Teacher before creating a local account or signing in. Students answer questions before seeing the key, explanation and supporting passage. Teachers can inspect, edit, accept or reject drafts. Teacher practice uses accepted questions; student self-tests use questions that pass the basic format and source checks. These checks do not prove that an answer is correct.
+
+The app saves quiz marks in each account. An optional Related notes button offers public reading links after creating a set or completing a quiz. Students can complete the quiz without opening it.
+
+The app supports English PDFs with selectable text across different subjects. A local version is available. Question quality still needs to be checked using 30 generated questions.
 
 ## Evidence of the problem
 
@@ -15,25 +19,26 @@ The project covers different subjects. The first version will work with English 
 
 ## Related work
 
-- [Quizlet Practice Tests](https://help.quizlet.com/hc/en-us/articles/25946589648013-Studying-with-Practice-Tests) already creates questions from notes. Using its finished service would not provide this project with its own recorded question-writing and checking process.
-- [Steuer et al., 2021](https://arxiv.org/abs/2110.04123) selects textbook content and writes questions. A four-option question checker and a review screen still need to be built for this project.
+- [Quizlet Practice Tests](https://help.quizlet.com/hc/en-us/articles/25946589648013-Studying-with-Practice-Tests) already creates questions from notes. This project will build and test its own question-writing and review steps.
+- [Steuer et al., 2021](https://arxiv.org/abs/2110.04123) selects textbook content and writes questions. This project also checks answer options, supports teacher review and saves quiz marks.
 - [SciQ, Welbl et al., 2017](https://aclanthology.org/W17-4413/) provides science questions and supporting passages. It is a fixed question set and does not create questions from a student's chosen notes.
+- [NotebookLM source discovery](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/) recommends related web sources. note2quiz's first reading feature uses a selected list of public links and can focus on questions answered incorrectly.
 
-These are limits for the needs of this project, not claims that note2quiz is the first or best tool of its kind.
+These tools and studies guide the design and tests for note2quiz.
 
 ## Engineering gap
 
-The project will connect question writing with page references, checks for missing or repeated options, possible ambiguity warnings and a saved review decision. The main task is to make this process easy to inspect and test.
+The project connects question writing, page references, basic checks and saved results. Students should practise before seeing answer keys, while teachers need to inspect those keys when preparing questions. The main task is to make both flows easy to inspect and test, with optional related reading.
 
 ## Objectives
 
 - **O1:** Design a way to find relevant passages in the selected course notes and keep their file names and page numbers.
-- **O2:** Develop question writing, question checks, human review and a quiz made from accepted questions.
-- **O3:** Evaluate question quality, source support, review controls, time and cost using a defined test set.
+- **O2:** Develop student quizzes and teacher review, with question checks, saved marks and optional related reading.
+- **O3:** Evaluate question quality, source support, account access, privacy, saved marks, reading relevance, time and cost.
 
 ## Target users
 
-Undergraduate students revising their courses, and tutors who want to check draft practice questions.
+Undergraduate students revising their courses and teachers or tutors preparing practice questions.
 
 ## Data sources
 
@@ -60,6 +65,10 @@ These are initial test documents. Other permitted course documents can be added.
 | W1 | Project scope and repository setup | Scope, README, group observation sheet and system map | Complete |
 | W2 | Requirements, evaluation and design | Requirements, evaluation criteria, architecture and decisions | Complete |
 
-## Week 3 preparation
+## Local prototype
 
-Three public PDFs and reading notes are in `data/`. Coding will start in later labs using [Google Colab](https://colab.research.google.com/). Sign in with your Google account before the Week 3 lab.
+The dashboard is being tested locally and is not included in this repository yet. PDF reading and passage matching happen locally. A Google Gemini key is needed to generate new questions.
+
+Accounts, notes and marks are saved on this computer. The first account receives a copy of the existing local workspace. Classroom sharing and school sign-in are outside this version.
+
+Three public PDFs and reading notes remain in `data/` for the lab work. Use [Google Colab](https://colab.research.google.com/) where required by later labs.

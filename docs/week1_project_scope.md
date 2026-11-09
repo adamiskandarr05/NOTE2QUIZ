@@ -1,5 +1,7 @@
 # note2quiz project scope
 
+Version: 1.1 | Updated: 9 November 2026
+
 ## Project name
 
 note2quiz
@@ -12,7 +14,11 @@ Higher education and study support.
 
 Students need practice questions to check their understanding of course material. Writing clear questions with one correct answer and three useful wrong options takes time. note2quiz will turn selected course notes into draft questions and show the passages that support the answers.
 
-Users will choose a course, notes and topic. The system will find relevant passages, write questions, check the drafts and let a person accept, edit or reject them. Only accepted questions will be used in quizzes.
+Users choose Student or Teacher before creating a local account or signing in. Both roles choose a course, notes and topic. The system finds relevant passages, writes draft questions and checks their format and source quotes.
+
+Students take a self-test with answer keys hidden until submission. Questions that pass the basic checks can be used without showing the student the answers first. Teachers can inspect, edit, accept or reject drafts; their practice quizzes use accepted questions. An automated check does not count as teacher approval or proof that the answer is correct.
+
+The app saves marks, answers and past results in each account. An optional Related notes button suggests public reading after creating a set or finishing a quiz. After a quiz it focuses on questions answered incorrectly, or on the full quiz topic when every answer is correct. Opening these links is optional and does not change the quiz's selected sources.
 
 A question-writing service is needed to turn passages into new questions, answer choices and explanations. The first version will support English PDFs with selectable text across different subjects.
 
@@ -26,24 +32,25 @@ A question-writing service is needed to turn passages into new questions, answer
 | Study or tool | What it does | Limitation for this project |
 |---|---|---|
 | [Quizlet Practice Tests](https://help.quizlet.com/hc/en-us/articles/25946589648013-Studying-with-Practice-Tests) | Creates practice questions from uploaded notes or flashcard sets. | Using the finished service would not give this project its own recorded question-writing and checking process. |
-| [Steuer et al. (2021)](https://arxiv.org/abs/2110.04123) | Selects textbook content and writes questions using teaching principles. | A four-option question checker and a review screen still need to be built for this project. |
+| [Steuer et al. (2021)](https://arxiv.org/abs/2110.04123) | Selects textbook content and writes questions using teaching principles. | This project also checks answer options, supports teacher review and saves quiz marks. |
 | [SciQ, Welbl, Liu and Gardner (2017)](https://aclanthology.org/W17-4413/) | Provides science multiple-choice questions and supporting passages. | It is a fixed question set, limited to science, rather than a generator for selected course notes. |
+| [NotebookLM source discovery](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/) | Finds related sources on the web. | note2quiz's first version uses a smaller selected reading list. Its reading suggestions can focus on questions answered incorrectly. |
 
-These are comparisons with this project's needs. They do not establish that note2quiz has unique features or better results.
+These comparisons help explain the project scope. Similar features are available in other tools.
 
 ## Engineering gap
 
-The practical task is to join question writing, source pages, draft checks and saved reviewer decisions in a small application. Each draft should be easy to inspect before it becomes a practice question. The checks must also be tested because a real citation does not prove an answer is correct.
+The practical task is to join question writing, source pages, basic checks, teacher decisions and saved quiz marks. Students need to answer before seeing the key; teachers need to see the key when preparing questions. Optional reading should help users revisit a topic. The checks still need evaluation because a real citation does not prove that an answer is correct.
 
 ## Objectives
 
 - **O1:** Design a way to find relevant passages in the selected course notes and keep their file names and page numbers.
-- **O2:** Develop question writing, question checks, human review and a quiz made from accepted questions.
-- **O3:** Evaluate question quality, source support, review controls, time and cost using a defined test set.
+- **O2:** Develop student quizzes and teacher review, with question checks, saved marks and optional related reading.
+- **O3:** Evaluate question quality, source support, account access, privacy, saved marks, reading relevance, time and cost.
 
 ## Target users
 
-Undergraduate students revising course material and tutors reviewing draft questions.
+Undergraduate students revising course material and teachers or tutors preparing practice questions. Accounts and their records are local to one computer. Roles are selected by users; classroom sharing and school sign-in are outside this version.
 
 ## Data sources
 
@@ -53,23 +60,28 @@ Undergraduate students revising course material and tutors reviewing draft quest
 
 The two business chapters have the same parent book. Together with Think Python, they provide three public documents from two subjects for the first tests. They do not limit the courses the system is designed to support. Copies, attribution and reading notes are in [data](../data/README.md).
 
+Optional reading comes from a separate selected public reading list, initially containing 18 pages from the Python Software Foundation, MIT OpenCourseWare and OpenStax. It provides links to extra reading rather than adding web content to a quiz automatically. Unsupported topics show a no-match message and an optional web-search link.
+
 ## Similar to EduAdvisor
 
 Both systems use selected documents, find relevant passages and show source references so users can check the output.
 
 ## Different from EduAdvisor
 
-EduAdvisor answers academic advising questions. note2quiz creates practice questions from course notes. It must also check the answer options, save review decisions and score quizzes.
+EduAdvisor answers academic advising questions. note2quiz creates practice questions from course notes, separates student practice from teacher review, saves quiz marks and offers optional reading links.
 
 ## Responsible AI risks
 
 | Risk | Possible harm | Planned control |
 |---|---|---|
-| Wrong answer or weak supporting evidence | A student learns an incorrect fact. | Show the source passage and page; require human acceptance before quiz use. |
-| Two correct options or confusing wording | A student receives an unfair or misleading question. | Flag repeated or missing options and possible ambiguity; allow editing and rejection. |
-| Over-trusting a check result | A draft is treated as reliable without review. | Keep Draft and Accepted states separate; do not let automated checks approve questions. |
+| Wrong answer or weak supporting evidence | A student learns an incorrect fact. | Block drafts with missing source quotes, explain that generated questions can contain mistakes, and show the key and evidence after submission. Teachers can check drafts before use. |
+| Two correct options or confusing wording | A student receives a misleading question. | Check for repeated or missing options; let teachers edit or reject questions; use human ratings to evaluate correctness and clarity. |
+| Over-trusting a check result | A matching quote is mistaken for proof that the answer is correct. | Keep basic checks separate from teacher acceptance. Explain the limits of the checks in the student flow. |
+| Answers shown before a self-test | The student already knows the marked option before answering. | Hide student answer keys and explanations until submission. Keep teacher review in a separate role. |
 | Wrong course material is used | Practice questions cover the wrong course. | Search only the chosen course files and show the file name for every question. |
 | Private information or restricted notes are shared | Personal information or protected material reaches another service. | Use permitted notes, check sensitive fields and ask permission before sending selected passages. Keep keys and private files out of GitHub. |
+| Account records are exposed | One user sees another user's notes or marks. | Require sign-in, separate local workspaces and enforce the account role on the server. |
+| Unrelated reading is suggested | A student spends time on material outside the course. | Use real links from the selected reading list, show the publisher, explain the match and allow users to skip it. |
 
 ## Why GitHub
 
