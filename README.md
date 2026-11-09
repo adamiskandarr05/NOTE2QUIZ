@@ -57,6 +57,10 @@ These are initial test documents. Other permitted course documents can be added.
 - [Week 2 evaluation criteria](docs/week2_evaluation_criteria.md)
 - [Week 2 architecture diagram](docs/week2_architecture_v1.png)
 - [Week 2 architecture decisions and traceability](docs/week2_architecture_decisions.md)
+- [Week 3 pipeline notebook](notebooks/week3_pipeline.ipynb)
+- [Week 3 data inventory](docs/week3_data_inventory.md)
+- [Week 3 pipeline diagram](docs/week3_pipeline_diagram.png)
+- [Week 3 pipeline decisions](docs/week3_pipeline_decisions.md)
 
 ## Weekly progress
 
@@ -64,6 +68,13 @@ These are initial test documents. Other permitted course documents can be added.
 |---|---|---|---|
 | W1 | Project scope and repository setup | Scope, README, group observation sheet and system map | Complete |
 | W2 | Requirements, evaluation and design | Requirements, evaluation criteria, architecture and decisions | Complete |
+| W3 | PDF data preparation | Notebook, inventory, diagram, decisions and prepared exports | Local checks passed; Colab run pending |
+
+## Week 3 data pipeline
+
+The notebook prepares 62 passages from 12 selected pages in two public PDFs. It keeps source files and PDF page numbers. Both local runs produced matching outputs. See the [Part B manifest](data/week3_manifest.json) and [Part C run manifest](data/pipeline_v1/documents/pipeline_manifest.json).
+
+[Open the notebook in Google Colab](https://colab.research.google.com/github/adamiskandarr05/NOTE2QUIZ/blob/main/notebooks/week3_pipeline.ipynb) and run all cells before submission. The saved outputs are from a local Python check; the Colab run is still pending. No model API key is needed.
 
 ## Local prototype
 
@@ -71,4 +82,4 @@ The dashboard is being tested locally and is not included in this repository yet
 
 Accounts, notes and marks are saved on this computer. The first account receives a copy of the existing local workspace. Classroom sharing and school sign-in are outside this version.
 
-Three public PDFs and reading notes remain in `data/` for the lab work. Use [Google Colab](https://colab.research.google.com/) where required by later labs.
+Three public PDFs and reading notes remain in `data/` for the lab work. Week 3 uses [Google Colab](https://colab.research.google.com/).

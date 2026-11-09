@@ -1,0 +1,67 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-09T03:42:28.570066+00:00",
+  "runtime": "Local Python check",
+  "python": "3.12.14",
+  "pypdf": "6.21.4",
+  "configuration": {
+    "method": "paragraph-aware",
+    "chunk_size": 500,
+    "page_aware": true,
+    "cleaning_version": "week3-v1"
+  },
+  "requirements": [
+    "FR1",
+    "FR3",
+    "RAI1"
+  ],
+  "records": [
+    {
+      "source_id": "S01",
+      "source_filename": "think_python_2e.pdf",
+      "repository_path": "data/think_python_2e.pdf",
+      "repository_url": "https://raw.githubusercontent.com/adamiskandarr05/NOTE2QUIZ/7e898e9011d0a898d46c173ffb0fbea056d8c85f/data/think_python_2e.pdf",
+      "original_url": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+      "source_sha256": "6033000bac3f9268ad75ee041bf8e5d9a3bc8a33bb156399cbd014918cb59f94",
+      "source_version": "Second edition, version 2.4.1, copyright 2015",
+      "owner": "Allen B. Downey / Green Tea Press",
+      "access_rights": "CC BY-NC 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-nc/3.0/",
+      "selected_pdf_pages": [
+        23,
+        30
+      ],
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "2f111a9a2c345d260583069711a677a06b88d9cdc4a1ea1859eac173675bed3f",
+      "prepared_records": 39,
+      "processing_note": "Known page headers/footers and trailing spaces removed; page-aware paragraph/line/word splitting at 500 characters.",
+      "status": "Prepared; question quality not evaluated"
+    },
+    {
+      "source_id": "S02",
+      "source_filename": "teamwork_in_business.pdf",
+      "repository_path": "data/teamwork_in_business.pdf",
+      "repository_url": "https://raw.githubusercontent.com/adamiskandarr05/NOTE2QUIZ/7e898e9011d0a898d46c173ffb0fbea056d8c85f/data/teamwork_in_business.pdf",
+      "original_url": "https://vtechworks.lib.vt.edu/bitstreams/38bd0a78-433e-4d0e-aa83-e0e0ff9b9b82/download",
+      "source_sha256": "a0a2d04aa27da310c90df785486c7f44cd7025a27e8f0899e6a866c66b0f07f6",
+      "source_version": "Fourth edition, 2023",
+      "owner": "Ron Poff / Virginia Tech",
+      "access_rights": "CC BY-NC-SA 4.0, except where otherwise noted",
+      "licence_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "selected_pdf_pages": [
+        2,
+        5
+      ],
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "2f111a9a2c345d260583069711a677a06b88d9cdc4a1ea1859eac173675bed3f",
+      "prepared_records": 23,
+      "processing_note": "Known page headers/footers and trailing spaces removed; page-aware paragraph/line/word splitting at 500 characters.",
+      "status": "Prepared; question quality not evaluated"
+    }
+  ],
+  "limits": [
+    "PDF position is retained; printed page numbers can differ.",
+    "Text extraction can lose layout, spacing and figures.",
+    "Selected pages only; no claim of complete course coverage."
+  ]
+}

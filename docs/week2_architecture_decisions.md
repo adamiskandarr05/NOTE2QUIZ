@@ -68,3 +68,7 @@ The evidence below is planned unless separately recorded as a completed test. Th
 ## Reflection
 
 AD2 has the main trade-off. Requiring a student to inspect a key before answering would weaken the self-test, while removing teacher review would make preparation harder. Separate flows support both tasks. This also makes correctness testing more important because a source match alone cannot establish that a generated answer is right.
+
+## Week 3 data evidence
+
+The data functions are expanded in the [Week 3 pipeline diagram](week3_pipeline_diagram.png). The [notebook](../notebooks/week3_pipeline.ipynb) and [pipeline decisions](week3_pipeline_decisions.md) link FR1, FR3 and RAI1 to 62 prepared passages with source files and PDF pages. These local preparation checks support E2 but do not replace the planned question-quality evaluation. The Colab run is pending.
