@@ -12,14 +12,14 @@ Steuer et al. discuss the time and cost of writing textbook self-test questions.
 
 ### Existing approaches
 
-- [Quizlet Practice Tests](https://help.quizlet.com/hc/en-us/articles/25946589648013-Studying-with-Practice-Tests) creates questions from notes. This coursework will build and record its own writing, checking and evaluation process.
+- [Quizlet Practice Tests](https://help.quizlet.com/hc/en-us/articles/25946589648013-Studying-with-Practice-Tests) creates questions from notes. This project will record how questions are generated, checked and reviewed.
 - [Steuer et al. (2021)](https://arxiv.org/abs/2110.04123) selects textbook content and writes questions. This project also needs answer-option checks and separate student and teacher screens.
 - [SciQ](https://aclanthology.org/W17-4413/) supplies science questions with supporting passages. It is a fixed dataset rather than a generator for selected course notes.
 - [NotebookLM source discovery](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/) recommends related web sources. note2quiz will begin with a selected list of public reading links.
 
 ### Engineering gap
 
-The project needs one clear process for finding passages, writing questions, checking sources and saving results. Students should answer before seeing the key. Teachers should be able to inspect and correct drafts. Optional reading should help users revisit a topic. The project will be judged by how well these features work together.
+The project needs to connect passage selection, question generation, source checks and saved results. Students should answer before seeing the key. Teachers should be able to inspect and correct drafts. Optional reading should help users revisit a topic. 
 
 ### Objectives
 
@@ -68,7 +68,7 @@ These thresholds are proposed evaluation targets, not measured model results.
 | NFR4 | Cost | The evaluation writing cost shall remain within the student budget. | Record usage and test-date rates for all six requests, checks and retries, including equivalent charges covered by free credit. | Total service cost for 30 questions. | At most US$1.00. |
 | NFR5 | Record reliability | Completed marks shall remain accurate and available in the correct account. | Compare saved results in six cases covering refresh, sign-in, account switching, restart and later question edits. | Lost or changed results; duplicate records. | 0 in all six cases. |
 
-The 45-second target allows a short wait for five questions. Correctness has a 90% target because students can practise before reviewing the key. It is still a draft-quality target, not a guarantee of error-free learning material. The US$1.00 limit is a proposed evaluation budget.
+The 45-second target allows a short wait for five questions. The 90% correctness target is an initial goal for draft questions; errors still need review. The US$1.00 limit keeps the six-batch evaluation within a student budget.
 
 ## Section 3 Responsible AI requirements
 
@@ -84,4 +84,4 @@ Privacy checks cover the defined fake fields, not every possible personal detail
 
 ### Reflection
 
-RAI1 remains the hardest requirement to measure. A real passage can still fail to support the answer, and multiple options can seem reasonable. The student flow also requires a careful balance: keep answers hidden during practice while making mistakes easy to inspect afterward. Two reviewers will rate correctness and clarity independently before resolving disagreements.
+RAI1 remains the hardest requirement to measure. A real passage can still fail to support the answer, and multiple options can seem reasonable. Students need answers hidden during practice and evidence they can check afterward. Two reviewers will rate correctness and clarity independently before resolving disagreements.

@@ -125,7 +125,7 @@
         <mxCell id="t27" value="Selected public reading links" vertex="1" parent="reading_list" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=top;spacing=0;fontFamily=Arial;fontSize=22;fontStyle=1;fontColor=#182638;fillColor=none;strokeColor=none;">
           <mxGeometry x="14" y="18" width="412" height="31.5" as="geometry"/>
         </mxCell>
-        <mxCell id="t28" value="18 initial public resources&#10;Separate from quiz source PDFs&#10;FR8 RAI5" vertex="1" parent="reading_list" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=top;spacing=0;fontFamily=Arial;fontSize=19;fontStyle=0;fontColor=#526173;fillColor=none;strokeColor=none;">
+        <mxCell id="t28" value="Matched by topic&#10;Separate from quiz source PDFs&#10;FR8 RAI5" vertex="1" parent="reading_list" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=top;spacing=0;fontFamily=Arial;fontSize=19;fontStyle=0;fontColor=#526173;fillColor=none;strokeColor=none;">
           <mxGeometry x="14" y="54.5" width="412" height="75.25" as="geometry"/>
         </mxCell>
         <mxCell id="related" vertex="1" parent="1" style="rounded=1;arcSize=10;fillColor=#ECF5EF;strokeColor=#39805A;strokeWidth=2;container=1;collapsible=0;">

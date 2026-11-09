@@ -30,8 +30,6 @@ The revised V1 diagram shows functions inside one application. A box does not re
 
 [Editable Draw.io diagram](week2_architecture_v1.drawio)
 
-The diagram uses functional labels. The current local prototype uses PDF text extraction and topic-word matching locally, with Google Gemini for new question generation. These implementation choices can be refined in later labs without changing the role and source requirements. The first reading list contains 18 public resources; it is separate from the PDFs selected for a quiz.
-
 ## Architecture decisions and trade-offs
 
 | Decision | Requirement or constraint | Alternatives considered | Selected option | Trade-off accepted |
@@ -43,7 +41,7 @@ The diagram uses functional labels. The current local prototype uses PDF text ex
 
 ## Requirements traceability matrix
 
-The evidence below is planned unless separately recorded as a completed test. The local software checks do not replace the 30-question quality evaluation.
+The evidence below is planned unless separately recorded as a completed test. The 30-question quality evaluation is planned separately.
 
 | Objective | Requirement | Evaluation criterion | Architecture element | Later evidence |
 |---|---|---|---|---|
@@ -59,7 +57,6 @@ The evidence below is planned unless separately recorded as a completed test. Th
 
 ## Review of V1
 
-- Each function supports a requirement in the needs table.
 - Source references are retained, but student keys and answer-specific evidence appear only after submission.
 - Student eligibility is different from teacher acceptance. Both rules are enforced by the app.
 - Optional reading uses a separate public list and does not silently change the quiz sources.

@@ -2,7 +2,7 @@
 
 Version: 1.1 | Updated: 9 November 2026
 
-The criteria below are an evaluation plan. The local prototype has received software checks, but the planned 30-question model evaluation and independent human ratings have not been completed. Curated sample questions do not count as generated evaluation results.
+This is the plan for later testing. The 30-question quality evaluation and independent human ratings have not been completed.
 
 ## Test workload
 
@@ -34,7 +34,7 @@ PDF page numbers are one-based positions in the stored file, including its cover
 
 **Correctness:** pass only when the key is correct, exactly one option is defensible and the explanation agrees with the notes. Rate the unedited draft, even if a teacher can later repair it.
 
-**Source support:** pass only when the file and page exist, the quoted passage appears there and it supports the marked answer. A topic or word match alone is insufficient.
+**Source support:** pass only when the file and page exist, the quoted passage appears there and it supports the marked answer. A matching topic or word alone does not show that the answer is supported.
 
 **Clarity:** 0 = unclear or misleading; 1 = understandable but needs editing; 2 = clear and understandable without editing. Judge wording separately from correctness.
 

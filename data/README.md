@@ -12,7 +12,7 @@ The two business files are separate chapters of the same book. [Publisher record
 
 ## Reading and text-extraction notes
 
-I read The Foundations of Business, including its discussion of businesses, customers and stakeholders, and compared the PDF layout with extracted text.
+The following notes compare the PDF layout of The Foundations of Business with its extracted text.
 
 - PDF page 2 places a figure and its caption beside the opening text. The extracted caption appears before the chapter heading, so reading order needs checking.
 - PDF page 3 contains raised reference numbers within paragraphs and a repeated footer. Those numbers and footer text should not become part of a question.

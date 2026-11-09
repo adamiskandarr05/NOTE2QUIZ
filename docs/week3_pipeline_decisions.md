@@ -23,7 +23,7 @@ Both methods used the same 12 pages and a 500-character maximum. Each page was s
 | Largest passage, characters | 500 | 499 |
 | Cuts inside words | 28 | 0 |
 
-These are measured local results from [the notebook](../notebooks/week3_pipeline.ipynb). The boundary check counts a cut between letters or digits and a cut between a line-end hyphen and the rest of its word. It does not rate whether a passage makes sense on its own.
+The [notebook](../notebooks/week3_pipeline.ipynb) produced these results in both the local and Colab runs. The boundary check counts a cut between letters or digits and a cut between a line-end hyphen and the rest of its word. It does not rate whether a passage makes sense on its own.
 
 The first fixed-size split ends with `complex sy`, and the next passage starts with `stems`. The chosen method keeps `systems` together. It produced five more passages but avoided the 28 measured word cuts.
 
@@ -38,11 +38,11 @@ The chosen method tries a blank line first, then a line break, then a word space
 
 Think Python changed from 16,561 to 16,339 characters after cleaning. Teamwork changed from 9,680 to 9,452. The checks confirm that splitting retains all non-whitespace characters from those cleaned pages.
 
-The accepted limitation is that sentences and ideas can still cross passage or page boundaries. Code spacing and figure reading order also need review before generating questions. More detailed quality checks belong to Topic 4.
+Sentences and ideas can still cross passage or page boundaries. Code spacing and figure reading order also need review before generating questions. More detailed quality checks belong to Topic 4.
 
 ## Workflow choices
 
-This is a batch process because the input is a small, fixed set of PDF pages. There is no continuous feed to process. The prepared export follows ETL: extract PDF text, transform it, then load it into the prepared JSONL file. Original PDFs are retained separately so the preparation can be repeated.
+Batch processing suits this small set of PDF pages, which is processed together rather than as a live stream. The prepared export follows ETL: extract PDF text, transform it, then load it into the prepared JSONL file. Original PDFs are retained separately so the preparation can be repeated.
 
 Part B writes `data/processed/prepared_text.jsonl` and `data/week3_manifest.json`. Part C reruns the same preparation and writes `data/pipeline_v1/documents/prepared_text.jsonl` and `pipeline_manifest.json`. The manifests retain source versions, licences, source and output checksums, configuration and source-to-output links.
 

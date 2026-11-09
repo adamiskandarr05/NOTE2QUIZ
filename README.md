@@ -6,11 +6,11 @@ Turns course notes into practice questions and shows the pages that support the 
 
 Students need practice questions to check what they understand. Writing clear questions, correct answers and useful wrong options takes time. note2quiz creates draft questions from selected course notes and keeps the passages that support the answers.
 
-Users choose Student or Teacher before creating a local account or signing in. Students answer questions before seeing the key, explanation and supporting passage. Teachers can inspect, edit, accept or reject drafts. Teacher practice uses accepted questions; student self-tests use questions that pass the basic format and source checks. These checks do not prove that an answer is correct.
+Students answer before seeing the key and supporting passage. Teachers can edit, accept or reject drafts. Basic format and source checks help find errors, but the questions still need review.
 
-The app saves quiz marks in each account. An optional Related notes button offers public reading links after creating a set or completing a quiz. Students can complete the quiz without opening it.
+The planned features include separate Student and Teacher accounts, saved quiz marks and optional links to related reading.
 
-The app supports English PDFs with selectable text across different subjects. A local version is available. Question quality still needs to be checked using 30 generated questions.
+The first version supports English PDFs with selectable text across different subjects. The 30-question quality evaluation is planned for later work.
 
 ## Evidence of the problem
 
@@ -24,11 +24,9 @@ The app supports English PDFs with selectable text across different subjects. A 
 - [SciQ, Welbl et al., 2017](https://aclanthology.org/W17-4413/) provides science questions and supporting passages. It is a fixed question set and does not create questions from a student's chosen notes.
 - [NotebookLM source discovery](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/) recommends related web sources. note2quiz's first reading feature uses a selected list of public links and can focus on questions answered incorrectly.
 
-These tools and studies guide the design and tests for note2quiz.
-
 ## Engineering gap
 
-The project connects question writing, page references, basic checks and saved results. Students should practise before seeing answer keys, while teachers need to inspect those keys when preparing questions. The main task is to make both flows easy to inspect and test, with optional related reading.
+The main task is to connect generated questions to their source pages and check them before use. Student practice and teacher review need separate screens so students can answer without seeing the key first.
 
 ## Objectives
 
@@ -68,18 +66,10 @@ These are initial test documents. Other permitted course documents can be added.
 |---|---|---|---|
 | W1 | Project scope and repository setup | Scope, README, group observation sheet and system map | Complete |
 | W2 | Requirements, evaluation and design | Requirements, evaluation criteria, architecture and decisions | Complete |
-| W3 | PDF data preparation | Notebook, inventory, diagram, decisions and prepared exports | Complete; local and Colab checks passed |
+| W3 | PDF data preparation | Notebook, inventory, diagram, decisions and prepared exports | Complete |
 
 ## Week 3 data pipeline
 
 The notebook prepares 62 passages from 12 selected pages in two public PDFs. It keeps source files and PDF page numbers. The local and Google Colab runs produced matching prepared files. See the [Part B manifest](data/week3_manifest.json) and [Part C run manifest](data/pipeline_v1/documents/pipeline_manifest.json).
 
 [Open the notebook in Google Colab](https://colab.research.google.com/github/adamiskandarr05/NOTE2QUIZ/blob/main/notebooks/week3_pipeline.ipynb) to rerun the steps. The saved notebook contains the completed Colab outputs. The manifests retain the earlier local run details; both runs produced the same prepared-file checksum. No model API key is needed.
-
-## Local prototype
-
-The dashboard is being tested locally and is not included in this repository yet. PDF reading and passage matching happen locally. A Google Gemini key is needed to generate new questions.
-
-Accounts, notes and marks are saved on this computer. The first account receives a copy of the existing local workspace. Classroom sharing and school sign-in are outside this version.
-
-Three public PDFs and reading notes remain in `data/` for the lab work. Week 3 uses [Google Colab](https://colab.research.google.com/).

@@ -16,11 +16,11 @@ Students need practice questions to check their understanding of course material
 
 Users choose Student or Teacher before creating a local account or signing in. Both roles choose a course, notes and topic. The system finds relevant passages, writes draft questions and checks their format and source quotes.
 
-Students take a self-test with answer keys hidden until submission. Questions that pass the basic checks can be used without showing the student the answers first. Teachers can inspect, edit, accept or reject drafts; their practice quizzes use accepted questions. An automated check does not count as teacher approval or proof that the answer is correct.
+Students take a self-test with answer keys hidden until submission. Teachers can inspect, edit, accept or reject drafts; their practice quizzes use accepted questions. Basic checks are separate from teacher approval and do not prove an answer is correct.
 
 The app saves marks, answers and past results in each account. An optional Related notes button suggests public reading after creating a set or finishing a quiz. After a quiz it focuses on questions answered incorrectly, or on the full quiz topic when every answer is correct. Opening these links is optional and does not change the quiz's selected sources.
 
-A question-writing service is needed to turn passages into new questions, answer choices and explanations. The first version will support English PDFs with selectable text across different subjects.
+The first version will generate questions from English PDFs with selectable text across different subjects.
 
 ## Evidence of the problem
 
@@ -36,11 +36,9 @@ A question-writing service is needed to turn passages into new questions, answer
 | [SciQ, Welbl, Liu and Gardner (2017)](https://aclanthology.org/W17-4413/) | Provides science multiple-choice questions and supporting passages. | It is a fixed question set, limited to science, rather than a generator for selected course notes. |
 | [NotebookLM source discovery](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/) | Finds related sources on the web. | note2quiz's first version uses a smaller selected reading list. Its reading suggestions can focus on questions answered incorrectly. |
 
-These comparisons help explain the project scope. Similar features are available in other tools.
-
 ## Engineering gap
 
-The practical task is to join question writing, source pages, basic checks, teacher decisions and saved quiz marks. Students need to answer before seeing the key; teachers need to see the key when preparing questions. Optional reading should help users revisit a topic. The checks still need evaluation because a real citation does not prove that an answer is correct.
+The project needs to connect generated questions to source pages, teacher decisions and saved marks. Students need to answer before seeing the key; teachers need to see the key when preparing questions. Optional reading should help users revisit a topic. The checks still need evaluation because a real citation does not prove that an answer is correct.
 
 ## Objectives
 
@@ -58,9 +56,9 @@ Undergraduate students revising course material and teachers or tutors preparing
 2. Ron Poff (2023), Fundamentals of Business, fourth edition, Chapter 1, Teamwork in Business. [Public PDF](https://vtechworks.lib.vt.edu/bitstreams/38bd0a78-433e-4d0e-aa83-e0e0ff9b9b82/download). Licence: CC BY-NC-SA 4.0, except where otherwise stated.
 3. Ron Poff (2023), Fundamentals of Business, fourth edition, Chapter 2, The Foundations of Business. [Public PDF](https://vtechworks.lib.vt.edu/bitstreams/a72a10fa-9658-4452-b33d-af42eecacd98/download). Licence: CC BY-NC-SA 4.0, except where otherwise stated.
 
-The two business chapters have the same parent book. Together with Think Python, they provide three public documents from two subjects for the first tests. They do not limit the courses the system is designed to support. Copies, attribution and reading notes are in [data](../data/README.md).
+The business chapters come from the same book. Together with Think Python, they provide three test documents from two subjects. Other permitted course notes can be added. Copies, attribution and reading notes are in [data](../data/README.md).
 
-Optional reading comes from a separate selected public reading list, initially containing 18 pages from the Python Software Foundation, MIT OpenCourseWare and OpenStax. It provides links to extra reading rather than adding web content to a quiz automatically. Unsupported topics show a no-match message and an optional web-search link.
+Optional reading will use a separate list of public pages from the Python Software Foundation, MIT OpenCourseWare and OpenStax. It provides links to extra reading rather than adding web content to a quiz automatically. Unsupported topics show a no-match message and an optional web-search link.
 
 ## Similar to EduAdvisor
 
