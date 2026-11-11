@@ -68,8 +68,3 @@ These are initial test documents. Other permitted course documents can be added.
 | W2 | Requirements, evaluation and design | Requirements, evaluation criteria, architecture and decisions | Complete |
 | W3 | PDF data preparation | Notebook, inventory, diagram, decisions and prepared exports | Complete |
 
-## Week 3 data pipeline
-
-The notebook prepares 62 passages from 12 selected pages in two public PDFs. It keeps source files and PDF page numbers. The local and Google Colab runs produced matching prepared files. See the [Part B manifest](data/week3_manifest.json) and [Part C run manifest](data/pipeline_v1/documents/pipeline_manifest.json).
-
-[Open the notebook in Google Colab](https://colab.research.google.com/github/adamiskandarr05/NOTE2QUIZ/blob/main/notebooks/week3_pipeline.ipynb) to rerun the steps. The saved notebook contains the completed Colab outputs. The manifests retain the earlier local run details; both runs produced the same prepared-file checksum. No model API key is needed.
