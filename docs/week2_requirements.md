@@ -1,7 +1,5 @@
 # Requirements specification for note2quiz
 
-Version: 1.1 | Updated: 9 November 2026
-
 ## Section 0 Project framing and application scope
 
 ### Problem and evidence

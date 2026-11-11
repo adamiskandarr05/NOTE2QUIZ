@@ -1,7 +1,5 @@
 # Architecture decisions for note2quiz
 
-Version: 1.1 | Updated: 9 November 2026
-
 ## Starting point
 
 User request → application → question writer → questions and quiz feedback.
@@ -28,8 +26,6 @@ The revised V1 diagram shows functions inside one application. A box does not re
 
 ![note2quiz revised V1 architecture](week2_architecture_v1.png)
 
-[Editable Draw.io diagram](week2_architecture_v1.drawio)
-
 ## Architecture decisions and trade-offs
 
 | Decision | Requirement or constraint | Alternatives considered | Selected option | Trade-off accepted |
@@ -41,7 +37,7 @@ The revised V1 diagram shows functions inside one application. A box does not re
 
 ## Requirements traceability matrix
 
-The evidence below is planned unless separately recorded as a completed test. The 30-question quality evaluation is planned separately.
+The table below lists the evidence planned for later evaluation.
 
 | Objective | Requirement | Evaluation criterion | Architecture element | Later evidence |
 |---|---|---|---|---|

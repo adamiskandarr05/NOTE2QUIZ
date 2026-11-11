@@ -1,7 +1,5 @@
 # Evaluation criteria for note2quiz
 
-Version: 1.1 | Updated: 9 November 2026
-
 This is the plan for later testing. The 30-question quality evaluation and independent human ratings have not been completed.
 
 ## Test workload

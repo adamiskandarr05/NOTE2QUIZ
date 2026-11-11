@@ -1,7 +1,5 @@
 # note2quiz project scope
 
-Version: 1.1 | Updated: 9 November 2026
-
 ## Project name
 
 note2quiz
@@ -80,7 +78,3 @@ EduAdvisor answers academic advising questions. note2quiz creates practice quest
 | Private information or restricted notes are shared | Personal information or protected material reaches another service. | Use permitted notes, check sensitive fields and ask permission before sending selected passages. Keep keys and private files out of GitHub. |
 | Account records are exposed | One user sees another user's notes or marks. | Require sign-in, separate local workspaces and enforce the account role on the server. |
 | Unrelated reading is suggested | A student spends time on material outside the course. | Use real links from the selected reading list, show the publisher, explain the match and allow users to skip it. |
-
-## Why GitHub
-
-GitHub will keep the project documents, code, prompts and later test results together. Its history will show what changed and why. The repository is [adamiskandarr05/NOTE2QUIZ](https://github.com/adamiskandarr05/NOTE2QUIZ).
