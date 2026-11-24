@@ -59,6 +59,9 @@ These are initial test documents. Other permitted course documents can be added.
 - [Week 3 data inventory](docs/week3_data_inventory.md)
 - [Week 3 pipeline diagram](docs/week3_pipeline_diagram.png)
 - [Week 3 pipeline decisions](docs/week3_pipeline_decisions.md)
+- [Week 4 quality notebook](notebooks/week4_quality.ipynb)
+- [Week 4 data quality report](docs/week4_data_quality_report.md)
+- [Week 4 filtered passages](data/prepared_chunks_clean.jsonl)
 
 ## Weekly progress
 
@@ -67,4 +70,7 @@ These are initial test documents. Other permitted course documents can be added.
 | W1 | Project scope and repository setup | Scope, README, group observation sheet and system map | Complete |
 | W2 | Requirements, evaluation and design | Requirements, evaluation criteria, architecture and decisions | Complete |
 | W3 | PDF data preparation | Notebook, inventory, diagram, decisions and prepared exports | Complete |
+| W4 | Data quality review | Notebook, filtered passages, checks, coverage and report | Complete |
+
+Lab 4 puts question generation on hold because the Python PDF text needs repair. The [21 filtered teamwork passages](data/prepared_chunks_clean.jsonl) and matching [notebook file](data/chunks_clean.pkl) are for inspection. After repair, later work should use the rerun Week 4 files, not the original Week 3 data. See the Week 4 report.
 

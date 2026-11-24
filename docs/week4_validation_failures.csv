@@ -1,0 +1,52 @@
+record_id,classification,char_count,decision
+S01-p0027-c007,short passage,60,review context before quiz use
+S01-p0030-c002,short passage,75,review context before quiz use
+S02-p0003-c001,figure reference,454,review whether answer needs unseen figure
+S02-p0003-c007,short passage,88,review context before quiz use
+S02-p0005-c004,figure reference,379,review whether answer needs unseen figure
+S01-p0023-c002,joined words in extracted PDF text,440,hold for repair against visible PDF
+S01-p0025-c002,joined words in extracted PDF text,448,hold for repair against visible PDF
+S01-p0027-c007,end of definition without subject,60,hold until combined with preceding text
+S01-p0030-c002,end of a question without its opening,75,hold until combined with preceding text
+S02-p0003-c007,end of a sentence without its opening,88,hold until combined with preceding text
+S02-p0003-c001,figure caption followed by readable narrative,454,retain narrative; review if a question needs the image
+S02-p0005-c004,figure needed for percentage claims,379,hold questions needing the figure
+S01-p0023-c001,Python extraction errors found across sampled pages,498,hold until re-extracted and checked
+S01-p0023-c002,Python extraction errors found across sampled pages,440,hold until re-extracted and checked
+S01-p0023-c003,Python extraction errors found across sampled pages,379,hold until re-extracted and checked
+S01-p0023-c004,Python extraction errors found across sampled pages,478,hold until re-extracted and checked
+S01-p0023-c005,Python extraction errors found across sampled pages,157,hold until re-extracted and checked
+S01-p0024-c001,Python extraction errors found across sampled pages,474,hold until re-extracted and checked
+S01-p0024-c002,Python extraction errors found across sampled pages,495,hold until re-extracted and checked
+S01-p0024-c003,Python extraction errors found across sampled pages,429,hold until re-extracted and checked
+S01-p0024-c004,Python extraction errors found across sampled pages,495,hold until re-extracted and checked
+S01-p0024-c005,Python extraction errors found across sampled pages,437,hold until re-extracted and checked
+S01-p0024-c006,Python extraction errors found across sampled pages,302,hold until re-extracted and checked
+S01-p0025-c001,Python extraction errors found across sampled pages,408,hold until re-extracted and checked
+S01-p0025-c002,Python extraction errors found across sampled pages,448,hold until re-extracted and checked
+S01-p0025-c003,Python extraction errors found across sampled pages,444,hold until re-extracted and checked
+S01-p0025-c004,Python extraction errors found across sampled pages,420,hold until re-extracted and checked
+S01-p0026-c001,Python extraction errors found across sampled pages,496,hold until re-extracted and checked
+S01-p0026-c002,Python extraction errors found across sampled pages,492,hold until re-extracted and checked
+S01-p0026-c003,Python extraction errors found across sampled pages,487,hold until re-extracted and checked
+S01-p0026-c004,Python extraction errors found across sampled pages,431,hold until re-extracted and checked
+S01-p0027-c001,Python extraction errors found across sampled pages,418,hold until re-extracted and checked
+S01-p0027-c002,Python extraction errors found across sampled pages,452,hold until re-extracted and checked
+S01-p0027-c003,Python extraction errors found across sampled pages,462,hold until re-extracted and checked
+S01-p0027-c004,Python extraction errors found across sampled pages,484,hold until re-extracted and checked
+S01-p0027-c005,Python extraction errors found across sampled pages,485,hold until re-extracted and checked
+S01-p0027-c006,Python extraction errors found across sampled pages,442,hold until re-extracted and checked
+S01-p0027-c007,Python extraction errors found across sampled pages,60,hold until re-extracted and checked
+S01-p0028-c001,Python extraction errors found across sampled pages,480,hold until re-extracted and checked
+S01-p0028-c002,Python extraction errors found across sampled pages,489,hold until re-extracted and checked
+S01-p0028-c003,Python extraction errors found across sampled pages,444,hold until re-extracted and checked
+S01-p0028-c004,Python extraction errors found across sampled pages,487,hold until re-extracted and checked
+S01-p0028-c005,Python extraction errors found across sampled pages,452,hold until re-extracted and checked
+S01-p0028-c006,Python extraction errors found across sampled pages,229,hold until re-extracted and checked
+S01-p0029-c001,Python extraction errors found across sampled pages,498,hold until re-extracted and checked
+S01-p0029-c002,Python extraction errors found across sampled pages,499,hold until re-extracted and checked
+S01-p0029-c003,Python extraction errors found across sampled pages,455,hold until re-extracted and checked
+S01-p0029-c004,Python extraction errors found across sampled pages,464,hold until re-extracted and checked
+S01-p0029-c005,Python extraction errors found across sampled pages,237,hold until re-extracted and checked
+S01-p0030-c001,Python extraction errors found across sampled pages,487,hold until re-extracted and checked
+S01-p0030-c002,Python extraction errors found across sampled pages,75,hold until re-extracted and checked
